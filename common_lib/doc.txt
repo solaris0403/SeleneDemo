@@ -1,0 +1,14 @@
+utils->
+        AppUtils                    ok
+        ArrayUtils                  ok
+        CollectionUtils             ok
+        DigestUtils                 ok              md5 + 16
+        JSONUtils                   ok              手动获取JSON中的数据
+        ListUtils                   ok
+database->
+        AssetDatabaseOpenHelper     ok
+io->
+        FileUtils                   ok              file
+        IOUtils                     ok              关闭流
+http->
+        HttpUtils                   ok              简单的http请求
