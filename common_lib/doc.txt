@@ -5,6 +5,16 @@ utils->
         DigestUtils                 ok              md5 + 16
         JSONUtils                   ok              手动获取JSON中的数据
         ListUtils                   ok
+        MapUtils                    ok
+        NetWorkUtils                ok              獲取網絡信息
+        ObjectUtils                 ok
+        PreferencesUtils            ok
+        RandomUtils                 ok              隨機數  洗牌
+        ResourceUtils               ok              asset and raw file operate
+        DensityUtils                ok              像素大小轉換
+        ScreenUtils                 ok              屏幕寬高 截圖
+        ShellUtils                  ok              shell命令
+        SingletonUtils              ok              單例   (不長用)
 database->
         AssetDatabaseOpenHelper     ok
 io->

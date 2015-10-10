@@ -2,6 +2,11 @@ package com.tony.selene.common.trinea.android.common.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.Map;
 
 /**
  * PreferencesUtils, easy to get or put data
@@ -25,39 +30,34 @@ import android.content.SharedPreferences;
  * <li>get float {@link #getFloat(Context, String)}, {@link #getFloat(Context, String, float)}</li>
  * <li>get boolean {@link #getBoolean(Context, String)}, {@link #getBoolean(Context, String, boolean)}</li>
  * </ul>
- * 
+ *
  * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2013-3-6
  */
 public class PreferencesUtils {
-
-    public static String PREFERENCE_NAME = "TrineaAndroidCommon";
-
-    private PreferencesUtils() {
-        throw new AssertionError();
-    }
+    public static String PREFERENCE_NAME = "share_name";
 
     /**
-     * put string preferences
-     * 
+     * Put string preferences
+     *
      * @param context
-     * @param key The name of the preference to modify
-     * @param value The new value for the preference
-     * @return True if the new values were successfully written to persistent storage.
+     * @param key
+     * @param value
      */
-    public static boolean putString(Context context, String key, String value) {
-        SharedPreferences settings = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = settings.edit();
+    public static void putString(Context context, String key, String value) {
+        SharedPreferences sp = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
+        Editor editor = sp.edit();
         editor.putString(key, value);
-        return editor.commit();
+        SharedPreferencesCompat.apply(editor);
     }
 
     /**
-     * get string preferences
-     * 
+     * Get string preferences
+     *
      * @param context
-     * @param key The name of the preference to retrieve
-     * @return The preference value if it exists, or null. Throws ClassCastException if there is a preference with this
-     *         name that is not a string
+     * @param key
+     * @return The preference value if it exists, or null. Throws
+     * ClassCastException if there is a preference with this name that
+     * is not a string
      * @see #getString(Context, String, String)
      */
     public static String getString(Context context, String key) {
@@ -65,41 +65,42 @@ public class PreferencesUtils {
     }
 
     /**
-     * get string preferences
-     * 
+     * Get string preferences
+     *
      * @param context
-     * @param key The name of the preference to retrieve
-     * @param defaultValue Value to return if this preference does not exist
-     * @return The preference value if it exists, or defValue. Throws ClassCastException if there is a preference with
-     *         this name that is not a string
+     * @param key
+     * @param defaultValue
+     * @return The preference value if it exists, or null. Throws
+     * ClassCastException if there is a preference with this name that
+     * is not a string
      */
     public static String getString(Context context, String key, String defaultValue) {
-        SharedPreferences settings = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
-        return settings.getString(key, defaultValue);
+        SharedPreferences sp = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
+        return sp.getString(key, defaultValue);
     }
 
     /**
-     * put int preferences
-     * 
+     * Put int preferences
+     *
      * @param context
-     * @param key The name of the preference to modify
-     * @param value The new value for the preference
-     * @return True if the new values were successfully written to persistent storage.
+     * @param key
+     * @param value
      */
-    public static boolean putInt(Context context, String key, int value) {
-        SharedPreferences settings = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = settings.edit();
+    public static void putInt(Context context, String key, int value) {
+        SharedPreferences sp = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
+        Editor editor = sp.edit();
         editor.putInt(key, value);
-        return editor.commit();
+        SharedPreferencesCompat.apply(editor);
     }
 
     /**
-     * get int preferences
-     * 
+     * Get int preferences
+     *
      * @param context
-     * @param key The name of the preference to retrieve
-     * @return The preference value if it exists, or -1. Throws ClassCastException if there is a preference with this
-     *         name that is not a int
+     * @param key
+     * @return The preference value if it exists, or -1. Throws
+     * ClassCastException if there is a preference with this name that
+     * is not a int
      * @see #getInt(Context, String, int)
      */
     public static int getInt(Context context, String key) {
@@ -107,41 +108,44 @@ public class PreferencesUtils {
     }
 
     /**
-     * get int preferences
-     * 
+     * Get int preferences
+     *
      * @param context
-     * @param key The name of the preference to retrieve
+     * @param key
      * @param defaultValue Value to return if this preference does not exist
-     * @return The preference value if it exists, or defValue. Throws ClassCastException if there is a preference with
-     *         this name that is not a int
+     * @return The preference value if it exists, or defValue. Throws
+     * ClassCastException if there is a preference with this name that
+     * is not a int
      */
     public static int getInt(Context context, String key, int defaultValue) {
-        SharedPreferences settings = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
-        return settings.getInt(key, defaultValue);
+        SharedPreferences sp = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
+        return sp.getInt(key, defaultValue);
     }
 
     /**
-     * put long preferences
-     * 
+     * Put long preferences
+     *
      * @param context
-     * @param key The name of the preference to modify
-     * @param value The new value for the preference
-     * @return True if the new values were successfully written to persistent storage.
+     * @param key
+     * @param value
+     * @return True if the new values were successfully written to persistent
+     * storage.
      */
-    public static boolean putLong(Context context, String key, long value) {
-        SharedPreferences settings = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = settings.edit();
+    public static void putLong(Context context, String key, long value) {
+        SharedPreferences sp = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
+        Editor editor = sp.edit();
         editor.putLong(key, value);
-        return editor.commit();
+        SharedPreferencesCompat.apply(editor);
     }
 
     /**
-     * get long preferences
-     * 
+     * Get long preferences
+     *
      * @param context
-     * @param key The name of the preference to retrieve
-     * @return The preference value if it exists, or -1. Throws ClassCastException if there is a preference with this
-     *         name that is not a long
+     * @param key
+     * @return The preference value if it exists, or -1. Throws
+     * ClassCastException if there is a preference with this name that
+     * is not a long
      * @see #getLong(Context, String, long)
      */
     public static long getLong(Context context, String key) {
@@ -149,41 +153,42 @@ public class PreferencesUtils {
     }
 
     /**
-     * get long preferences
-     * 
+     * Get long preferences
+     *
      * @param context
-     * @param key The name of the preference to retrieve
+     * @param key
      * @param defaultValue Value to return if this preference does not exist
-     * @return The preference value if it exists, or defValue. Throws ClassCastException if there is a preference with
-     *         this name that is not a long
+     * @return The preference value if it exists, or defValue. Throws
+     * ClassCastException if there is a preference with this name that
+     * is not a long
      */
     public static long getLong(Context context, String key, long defaultValue) {
-        SharedPreferences settings = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
-        return settings.getLong(key, defaultValue);
+        SharedPreferences sp = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
+        return sp.getLong(key, defaultValue);
     }
 
     /**
-     * put float preferences
-     * 
+     * Put float preferences
+     *
      * @param context
-     * @param key The name of the preference to modify
-     * @param value The new value for the preference
-     * @return True if the new values were successfully written to persistent storage.
+     * @param key
+     * @param value   The new value for the preference
      */
-    public static boolean putFloat(Context context, String key, float value) {
-        SharedPreferences settings = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = settings.edit();
+    public static void putFloat(Context context, String key, float value) {
+        SharedPreferences sp = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
+        Editor editor = sp.edit();
         editor.putFloat(key, value);
-        return editor.commit();
+        SharedPreferencesCompat.apply(editor);
     }
 
     /**
-     * get float preferences
-     * 
+     * Get float preferences
+     *
      * @param context
-     * @param key The name of the preference to retrieve
-     * @return The preference value if it exists, or -1. Throws ClassCastException if there is a preference with this
-     *         name that is not a float
+     * @param key
+     * @return The preference value if it exists, or -1. Throws
+     * ClassCastException if there is a preference with this name that
+     * is not a float
      * @see #getFloat(Context, String, float)
      */
     public static float getFloat(Context context, String key) {
@@ -191,58 +196,137 @@ public class PreferencesUtils {
     }
 
     /**
-     * get float preferences
-     * 
+     * Get float preferences
+     *
      * @param context
-     * @param key The name of the preference to retrieve
+     * @param key
      * @param defaultValue Value to return if this preference does not exist
-     * @return The preference value if it exists, or defValue. Throws ClassCastException if there is a preference with
-     *         this name that is not a float
+     * @return The preference value if it exists, or defValue. Throws
+     * ClassCastException if there is a preference with this name that
+     * is not a float
      */
     public static float getFloat(Context context, String key, float defaultValue) {
-        SharedPreferences settings = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
-        return settings.getFloat(key, defaultValue);
+        SharedPreferences sp = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
+        return sp.getFloat(key, defaultValue);
     }
 
     /**
-     * put boolean preferences
-     * 
+     * Put boolean preferences
+     *
      * @param context
-     * @param key The name of the preference to modify
-     * @param value The new value for the preference
-     * @return True if the new values were successfully written to persistent storage.
+     * @param key
+     * @param value   The new value for the preference
      */
-    public static boolean putBoolean(Context context, String key, boolean value) {
-        SharedPreferences settings = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = settings.edit();
+    public static void putBoolean(Context context, String key, boolean value) {
+        SharedPreferences sp = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
+        Editor editor = sp.edit();
         editor.putBoolean(key, value);
-        return editor.commit();
+        SharedPreferencesCompat.apply(editor);
     }
 
     /**
-     * get boolean preferences, default is false
-     * 
+     * Get boolean preferences, default is false
+     *
      * @param context
-     * @param key The name of the preference to retrieve
-     * @return The preference value if it exists, or false. Throws ClassCastException if there is a preference with this
-     *         name that is not a boolean
-     * @see #getBoolean(Context, String, boolean)
+     * @param key
+     * @return The preference value if it exists, or false. Throws
+     * ClassCastException if there is a preference with this name that
+     * is not a boolean
      */
     public static boolean getBoolean(Context context, String key) {
         return getBoolean(context, key, false);
     }
 
     /**
-     * get boolean preferences
-     * 
+     * Get boolean preferences
+     *
      * @param context
-     * @param key The name of the preference to retrieve
+     * @param key
      * @param defaultValue Value to return if this preference does not exist
-     * @return The preference value if it exists, or defValue. Throws ClassCastException if there is a preference with
-     *         this name that is not a boolean
      */
     public static boolean getBoolean(Context context, String key, boolean defaultValue) {
-        SharedPreferences settings = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
-        return settings.getBoolean(key, defaultValue);
+        SharedPreferences sp = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
+        return sp.getBoolean(key, defaultValue);
+    }
+
+    /**
+     * Remove the value what follow the key<br>
+     *
+     * @param context
+     * @param key
+     */
+    public static void remove(Context context, String key) {
+        SharedPreferences sp = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
+        Editor editor = sp.edit();
+        editor.remove(key);
+        SharedPreferencesCompat.apply(editor);
+    }
+
+    /**
+     * Clear all data <br>
+     *
+     * @param context
+     */
+    public static void clear(Context context) {
+        SharedPreferences sp = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.clear();
+        SharedPreferencesCompat.apply(editor);
+    }
+
+    /**
+     * whether a key already exists
+     *
+     * @param context
+     * @param key
+     * @return
+     */
+    public static boolean contains(Context context, String key) {
+        SharedPreferences sp = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
+        return sp.contains(key);
+    }
+
+    /**
+     * Return all content
+     *
+     * @param context
+     * @return all data that has save
+     */
+    public static Map<String, ?> getAll(Context context) {
+        SharedPreferences sp = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
+        return sp.getAll();
+    }
+
+    /**
+     * 解决SharedPreferencesCompat.apply方法的一个兼容类
+     */
+    private static class SharedPreferencesCompat {
+        private static final Method sApplyMethod = findApplyMethod();
+
+        private static Method findApplyMethod() {
+            try {
+                Class<Editor> clazz = SharedPreferences.Editor.class;
+                return clazz.getMethod("apply");
+            } catch (NoSuchMethodException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        public static void apply(SharedPreferences.Editor editor) {
+            try {
+                if (sApplyMethod != null) {
+                    sApplyMethod.invoke(editor);
+                    return;
+                }
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (IllegalArgumentException e) {
+                e.printStackTrace();
+            } catch (InvocationTargetException e) {
+                e.printStackTrace();
+            }
+            editor.commit();
+        }
     }
 }
