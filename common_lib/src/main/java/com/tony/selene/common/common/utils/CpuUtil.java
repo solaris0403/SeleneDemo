@@ -2,7 +2,6 @@ package com.tony.selene.common.common.utils;
 
 
 import com.tony.selene.common.android.log.Log;
-import com.tony.selene.common.common.assist.Check;
 
 import java.io.BufferedReader;
 import java.io.File;

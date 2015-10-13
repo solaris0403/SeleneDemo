@@ -1,6 +1,8 @@
 package com.tony.selene.common.common.assist;
 
 
+import com.tony.selene.common.trinea.android.common.math.Averager;
+
 /**
  * 时间均值计算器,只能用于单线程计时。
  *

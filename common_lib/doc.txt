@@ -1,5 +1,4 @@
 utils->
-        AppUtils                    ok
         ArrayUtils                  ok
         CollectionUtils             ok
         DigestUtils                 ok              md5 + 16
@@ -15,10 +14,34 @@ utils->
         ScreenUtils                 ok              屏幕寬高 截圖
         ShellUtils                  ok              shell命令
         SingletonUtils              ok              單例   (不長用)
+
+        SizeUtils                   ok              1024单位转换
+        SqliteUtils                 ok              sqlite包装类 获取实例
+        StringUtils                 ok
+        SystemUtils                 ok              获取系统默认线程数量
+        TimeUtils                   ok
+        ToastUtils                  ok
+        ViewUtils                   ok
+        WakeLock                    ok              亮屏
+        FlashLight                  ok
+        ClassUtil                   ok              类信息
+app->
+        AppUtils                    ok              获取App信息+调用系统分享
 database->
         AssetDatabaseOpenHelper     ok
 io->
         FileUtils                   ok              file
         IOUtils                     ok              关闭流
+
+        ByteUtil                    ok              字节转换
 http->
         HttpUtils                   ok              简单的http请求
+math->
+        Averager                    ok              算数平均数
+receiver->                                          接收器
+        PhoneReceiver               ok
+        ScreenReceiver              ok
+        SmsReceiver                 ok
+        TimeREceiver                ok
+data->
+        cipher                      ok              加密解密自定义算法
