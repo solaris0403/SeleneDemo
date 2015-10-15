@@ -5,8 +5,6 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.util.Log;
 
-import com.tony.selene.common.common.utils.ShellUtil;
-
 import java.io.File;
 
 /**

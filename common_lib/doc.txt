@@ -14,7 +14,6 @@ utils->
         ScreenUtils                 ok              屏幕寬高 截圖
         ShellUtils                  ok              shell命令
         SingletonUtils              ok              單例   (不長用)
-
         SizeUtils                   ok              1024单位转换
         SqliteUtils                 ok              sqlite包装类 获取实例
         StringUtils                 ok
@@ -25,19 +24,45 @@ utils->
         WakeLock                    ok              亮屏
         FlashLight                  ok
         ClassUtil                   ok              类信息
+
+        AlarmUtil                   ok              闹钟服务
+        AndroidUtil                 ok              手机信息 & MAC地址 & 开机时间
+        BitmapUtil                  ok              对位图的操作 转Byte 缩略 质量 大小位置
+        ClipboardUtil               ok              剪贴板
+        CpuUtil                     ok              CPU信息
+        DialogUtil                  no              对话框工具类（功能有待加强）
+        DisplayUtil                 ok              获取显示信息
+        FieldUtil                   ok              域工具
+        FileUtil                    no              文件工具（功能简单）
+        HandlerUtil                 ok              Handler工具类 投递到UI线程
+        HexUtil                     ok              16进制转换
+        InputMethodUtils            ok              软键盘控制显示隐藏
+        MD5Util                     ok
+        MemoryUtil                  ok              获取内存信息
+        NotificationUtil            ok
+        PackageUtil                 no              需要加强（有other）
+        PollingUtil                 no              闹钟服务（需合并）
+        RandomUtil                  no              随机数 需要合并
+        SdCardUtil                  no              SDCARD 需要合并
+        ShellUtil                   no              有另一个（徐合并）
+        TelephoneUtil               no              有BUG  电话服务
+        VibrateUtil                 ok              震动服务
 app->
         AppUtils                    ok              获取App信息+调用系统分享
+
+        PackageUtils                ok              应用的安装卸载
 database->
         AssetDatabaseOpenHelper     ok
 io->
         FileUtils                   ok              file
         IOUtils                     ok              关闭流
-
         ByteUtil                    ok              字节转换
 http->
         HttpUtils                   ok              简单的http请求
 math->
         Averager                    ok              算数平均数
+
+        NumberUtil                  ok
 receiver->                                          接收器
         PhoneReceiver               ok
         ScreenReceiver              ok
