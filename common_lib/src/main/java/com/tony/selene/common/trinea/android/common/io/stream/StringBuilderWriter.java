@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.tony.selene.common.common.io.stream;
+package com.tony.selene.common.trinea.android.common.io.stream;
 
 import java.io.Serializable;
 import java.io.Writer;

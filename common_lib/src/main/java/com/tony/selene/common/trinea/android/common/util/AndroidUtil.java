@@ -6,7 +6,7 @@ import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.SystemClock;
 
-import com.tony.selene.common.android.log.Log;
+import com.tony.selene.common.trinea.android.common.log.Log;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

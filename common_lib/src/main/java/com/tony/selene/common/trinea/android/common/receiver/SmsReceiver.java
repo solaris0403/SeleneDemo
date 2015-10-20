@@ -11,7 +11,7 @@ import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.telephony.SmsMessage;
 
-import com.tony.selene.common.android.log.Log;
+import com.tony.selene.common.trinea.android.common.log.Log;
 
 import java.util.List;
 

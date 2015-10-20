@@ -1,4 +1,4 @@
-package com.tony.selene.common.common.io;
+package com.tony.selene.common.trinea.android.common.io;
 
 import android.os.Build;
 

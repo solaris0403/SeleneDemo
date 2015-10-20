@@ -1,4 +1,4 @@
-package com.tony.selene.common.common.service;
+package com.tony.selene.common.trinea.android.common.assist;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -13,7 +13,7 @@ import android.service.notification.NotificationListenerService;
 import android.service.notification.StatusBarNotification;
 import android.text.TextUtils;
 
-import com.tony.selene.common.android.log.Log;
+import com.tony.selene.common.trinea.android.common.log.Log;
 
 
 /**

@@ -1,4 +1,4 @@
-package com.tony.selene.common.android.log;
+package com.tony.selene.common.trinea.android.common.log;
 
 /**
  * the logger

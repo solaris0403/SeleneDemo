@@ -5,7 +5,7 @@ import android.os.Build;
 import android.os.Environment;
 import android.os.StatFs;
 
-import com.tony.selene.common.android.log.Log;
+import com.tony.selene.common.trinea.android.common.log.Log;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;

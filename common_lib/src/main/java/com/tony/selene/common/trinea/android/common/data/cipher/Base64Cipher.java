@@ -1,7 +1,7 @@
 package com.tony.selene.common.trinea.android.common.data.cipher;
 
 
-import com.tony.selene.common.common.assist.Base64;
+import com.tony.selene.common.trinea.android.common.security.Base64;
 
 /**
  * @author MaTianyu

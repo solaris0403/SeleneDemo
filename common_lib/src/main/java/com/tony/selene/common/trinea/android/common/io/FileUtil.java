@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.tony.selene.common.common.io;
+package com.tony.selene.common.trinea.android.common.io;
 
 import java.io.*;
 import java.math.BigInteger;
@@ -47,12 +47,12 @@ import java.util.*;
  *
  * @version $Id: FileUtils.java 1349509 2012-06-12 20:39:23Z ggregory $
  */
-public class FileUtils {
+public class FileUtil {
 
     /**
      * Instances should NOT be constructed in standard programming.
      */
-    public FileUtils() {
+    public FileUtil() {
         super();
     }
 
@@ -415,7 +415,7 @@ public class FileUtils {
     public static void touch(File file) throws IOException {
         if (!file.exists()) {
             OutputStream out = openOutputStream(file);
-            IOUtils.closeQuietly(out);
+            IOUtil.closeQuietly(out);
         }
         boolean success = file.setLastModified(System.currentTimeMillis());
         if (!success) {
@@ -502,11 +502,11 @@ public class FileUtils {
         try {
             input1 = new FileInputStream(file1);
             input2 = new FileInputStream(file2);
-            return IOUtils.contentEquals(input1, input2);
+            return IOUtil.contentEquals(input1, input2);
 
         } finally {
-            IOUtils.closeQuietly(input1);
-            IOUtils.closeQuietly(input2);
+            IOUtil.closeQuietly(input1);
+            IOUtil.closeQuietly(input2);
         }
     }
 
@@ -526,7 +526,7 @@ public class FileUtils {
      * @return true if the content of the files are equal or neither exists,
      * false otherwise
      * @throws IOException in case of an I/O error
-     * @see IOUtils#contentEqualsIgnoreEOL(Reader, Reader)
+     * @see IOUtil#contentEqualsIgnoreEOL(Reader, Reader)
      * @since 2.2
      */
     public static boolean contentEqualsIgnoreEOL(File file1, File file2, String charsetName) throws IOException {
@@ -560,11 +560,11 @@ public class FileUtils {
                 input1 = new InputStreamReader(new FileInputStream(file1), charsetName);
                 input2 = new InputStreamReader(new FileInputStream(file2), charsetName);
             }
-            return IOUtils.contentEqualsIgnoreEOL(input1, input2);
+            return IOUtil.contentEqualsIgnoreEOL(input1, input2);
 
         } finally {
-            IOUtils.closeQuietly(input1);
-            IOUtils.closeQuietly(input2);
+            IOUtil.closeQuietly(input1);
+            IOUtil.closeQuietly(input2);
         }
     }
 
@@ -851,7 +851,7 @@ public class FileUtils {
     public static long copyFile(File input, OutputStream output) throws IOException {
         final FileInputStream fis = new FileInputStream(input);
         try {
-            return IOUtils.copyLarge(fis, output);
+            return IOUtil.copyLarge(fis, output);
         } finally {
             fis.close();
         }
@@ -887,10 +887,10 @@ public class FileUtils {
                 pos += output.transferFrom(input, pos, count);
             }
         } finally {
-            IOUtils.closeQuietly(output);
-            IOUtils.closeQuietly(fos);
-            IOUtils.closeQuietly(input);
-            IOUtils.closeQuietly(fis);
+            IOUtil.closeQuietly(output);
+            IOUtil.closeQuietly(fos);
+            IOUtil.closeQuietly(input);
+            IOUtil.closeQuietly(fis);
         }
 
         if (srcFile.length() != destFile.length()) {
@@ -1246,13 +1246,13 @@ public class FileUtils {
         try {
             FileOutputStream output = openOutputStream(destination);
             try {
-                IOUtils.copy(source, output);
+                IOUtil.copy(source, output);
                 output.close(); // don't swallow close Exception if copy completes normally
             } finally {
-                IOUtils.closeQuietly(output);
+                IOUtil.closeQuietly(output);
             }
         } finally {
-            IOUtils.closeQuietly(source);
+            IOUtil.closeQuietly(source);
         }
     }
 
@@ -1398,9 +1398,9 @@ public class FileUtils {
         InputStream in = null;
         try {
             in = openInputStream(file);
-            return IOUtils.toString(in, Charsets.toCharset(encoding));
+            return IOUtil.toString(in, Charsets.toCharset(encoding));
         } finally {
-            IOUtils.closeQuietly(in);
+            IOUtil.closeQuietly(in);
         }
     }
 
@@ -1446,9 +1446,9 @@ public class FileUtils {
         InputStream in = null;
         try {
             in = openInputStream(file);
-            return IOUtils.toByteArray(in, file.length());
+            return IOUtil.toByteArray(in, file.length());
         } finally {
-            IOUtils.closeQuietly(in);
+            IOUtil.closeQuietly(in);
         }
     }
 
@@ -1466,9 +1466,9 @@ public class FileUtils {
         InputStream in = null;
         try {
             in = openInputStream(file);
-            return IOUtils.readLines(in, Charsets.toCharset(encoding));
+            return IOUtil.readLines(in, Charsets.toCharset(encoding));
         } finally {
-            IOUtils.closeQuietly(in);
+            IOUtil.closeQuietly(in);
         }
     }
 
@@ -1550,10 +1550,10 @@ public class FileUtils {
         OutputStream out = null;
         try {
             out = openOutputStream(file, append);
-            IOUtils.write(data, out, encoding);
+            IOUtil.write(data, out, encoding);
             out.close(); // don't swallow close Exception if copy completes normally
         } finally {
-            IOUtils.closeQuietly(out);
+            IOUtil.closeQuietly(out);
         }
     }
 
@@ -1717,7 +1717,7 @@ public class FileUtils {
             out.write(data);
             out.close(); // don't swallow close Exception if copy completes normally
         } finally {
-            IOUtils.closeQuietly(out);
+            IOUtil.closeQuietly(out);
         }
     }
 
@@ -1830,11 +1830,11 @@ public class FileUtils {
         try {
             out = openOutputStream(file, append);
             final BufferedOutputStream buffer = new BufferedOutputStream(out);
-            IOUtils.writeLines(lines, lineEnding, buffer, encoding);
+            IOUtil.writeLines(lines, lineEnding, buffer, encoding);
             buffer.flush();
             out.close(); // don't swallow close Exception if copy completes normally
         } finally {
-            IOUtils.closeQuietly(out);
+            IOUtil.closeQuietly(out);
         }
     }
 
@@ -2399,7 +2399,7 @@ public class FileUtils {
         if (!rename) {
             copyFile(srcFile, destFile);
             if (!srcFile.delete()) {
-                FileUtils.deleteQuietly(destFile);
+                FileUtil.deleteQuietly(destFile);
                 throw new IOException("Failed to delete original file '" + srcFile +
                         "' after copy to '" + destFile + "'");
             }

@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.tony.selene.common.common.io;
+package com.tony.selene.common.trinea.android.common.io;
 
 import android.os.Build;
 
-import com.tony.selene.common.common.io.stream.ByteArrayOutputStream;
-import com.tony.selene.common.common.io.stream.StringBuilderWriter;
+import com.tony.selene.common.trinea.android.common.io.stream.ByteArrayOutputStream;
+import com.tony.selene.common.trinea.android.common.io.stream.StringBuilderWriter;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -82,7 +82,7 @@ import java.util.List;
  *
  * @version $Id: IOUtils.java 1326636 2012-04-16 14:54:53Z ggregory $
  */
-public class IOUtils {
+public class IOUtil {
     // NOTE: This class is focussed on InputStream, OutputStream, Reader and
     // Writer. Each method should take at least one of these as a parameter,
     // or return one of them.
@@ -149,7 +149,7 @@ public class IOUtils {
     /**
      * Instances should NOT be constructed in standard programming.
      */
-    public IOUtils() {
+    public IOUtil() {
         super();
     }
 
@@ -612,7 +612,7 @@ public class IOUtils {
      * @since 2.4
      */
     public static byte[] toByteArray(URI uri) throws IOException {
-        return IOUtils.toByteArray(uri.toURL());
+        return IOUtil.toByteArray(uri.toURL());
     }
 
     /**
@@ -627,7 +627,7 @@ public class IOUtils {
     public static byte[] toByteArray(URL url) throws IOException {
         URLConnection conn = url.openConnection();
         try {
-            return IOUtils.toByteArray(conn);
+            return IOUtil.toByteArray(conn);
         } finally {
             close(conn);
         }
@@ -645,7 +645,7 @@ public class IOUtils {
     public static byte[] toByteArray(URLConnection urlConn) throws IOException {
         InputStream inputStream = urlConn.getInputStream();
         try {
-            return IOUtils.toByteArray(inputStream);
+            return IOUtil.toByteArray(inputStream);
         } finally {
             inputStream.close();
         }

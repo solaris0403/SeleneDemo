@@ -1,9 +1,11 @@
-package com.tony.selene.common.common.assist;
+package com.tony.selene.common.trinea.android.common.app;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.util.Log;
+
+import com.tony.selene.common.trinea.android.common.util.ShellUtil;
 
 import java.io.File;
 

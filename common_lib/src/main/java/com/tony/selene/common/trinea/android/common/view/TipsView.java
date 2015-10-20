@@ -1,4 +1,4 @@
-package com.tony.selene.common.android.view;
+package com.tony.selene.common.trinea.android.common.view;
 
 import android.annotation.TargetApi;
 import android.content.Context;

@@ -1,8 +1,9 @@
-package com.tony.selene.common.android.async;
+package com.tony.selene.common.trinea.android.common.async;
 
 import android.os.Handler;
 import android.os.Looper;
-import com.tony.selene.common.android.log.Log;
+
+import com.tony.selene.common.trinea.android.common.log.Log;
 
 import java.util.concurrent.*;
 
@@ -32,7 +33,9 @@ public class AsyncExecutor {
     }
 
     public static synchronized void shutdownNow() {
-        if (threadPool != null && !threadPool.isShutdown()) threadPool.shutdownNow();
+        if (threadPool != null && !threadPool.isShutdown()){
+            threadPool.shutdownNow();
+        }
         threadPool = null;
     }
 
@@ -116,10 +119,13 @@ public class AsyncExecutor {
     public static abstract class Worker<T> {
         protected abstract T doInBackground();
 
-        protected void onPostExecute(T data) {}
+        protected void onPostExecute(T data) {
+        }
 
-        protected void onCanceled() {}
+        protected void onCanceled() {
+        }
 
-        protected void abort() {}
+        protected void abort() {
+        }
     }
 }

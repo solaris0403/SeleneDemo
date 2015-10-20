@@ -1,7 +1,7 @@
-package com.tony.selene.common.common.assist;
+package com.tony.selene.common.trinea.android.common.assist;
 
 
-import com.tony.selene.common.android.log.Log;
+import com.tony.selene.common.trinea.android.common.log.Log;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

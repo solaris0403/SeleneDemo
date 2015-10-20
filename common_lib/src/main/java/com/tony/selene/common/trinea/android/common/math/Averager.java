@@ -1,7 +1,7 @@
 package com.tony.selene.common.trinea.android.common.math;
 
 
-import com.tony.selene.common.android.log.Log;
+import com.tony.selene.common.trinea.android.common.log.Log;
 
 import java.util.ArrayList;
 
