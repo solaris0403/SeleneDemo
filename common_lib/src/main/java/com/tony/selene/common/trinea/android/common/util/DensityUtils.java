@@ -11,7 +11,7 @@ public class DensityUtils{
 	 * dpTopx
 	 * 
 	 * @param context
-	 * @param dpVal
+	 * @param dpValgit add
 	 * @return
 	 */
 	public static int dp2px(Context context, float dpVal) {
