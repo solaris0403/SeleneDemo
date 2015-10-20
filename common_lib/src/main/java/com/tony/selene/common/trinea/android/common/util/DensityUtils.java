@@ -2,8 +2,7 @@
 import android.content.Context;
 import android.util.TypedValue;
 
-//常用单位转换的辅助类
-public class DensityUtils {
+public class DensityUtils{
 	private DensityUtils() {
 		throw new AssertionError();
 	}
