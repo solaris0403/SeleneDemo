@@ -4,7 +4,7 @@ import android.util.Log;
 import com.tony.selene.common.BuildConfig;
 
 /**
- * Created by user on 10/26/15.
+ * Log封装类
  */
 public class LogUtils {
     static String className;//类名
@@ -50,38 +50,38 @@ public class LogUtils {
     }
 
 
-    public static void i(String message){
+    public static void i(Object arg){
         if (!isDebuggable())
             return;
         getMethodNames(new Throwable().getStackTrace());
-        Log.i(className, createLog(message));
+        Log.i(className, createLog(String.valueOf(arg)));
     }
 
-    public static void d(String message){
+    public static void d(Object arg){
         if (!isDebuggable())
             return;
         getMethodNames(new Throwable().getStackTrace());
-        Log.d(className, createLog(message));
+        Log.d(className, createLog(String.valueOf(arg)));
     }
 
-    public static void v(String message){
+    public static void v(Object arg){
         if (!isDebuggable())
             return;
         getMethodNames(new Throwable().getStackTrace());
-        Log.v(className, createLog(message));
+        Log.v(className, createLog(String.valueOf(arg)));
     }
 
-    public static void w(String message){
+    public static void w(Object arg){
         if (!isDebuggable())
             return;
         getMethodNames(new Throwable().getStackTrace());
-        Log.w(className, createLog(message));
+        Log.w(className, createLog(String.valueOf(arg)));
     }
 
-    public static void wtf(String message){
+    public static void wtf(Object arg){
         if (!isDebuggable())
             return;
         getMethodNames(new Throwable().getStackTrace());
-        Log.wtf(className, createLog(message));
+        Log.wtf(className, createLog(String.valueOf(arg)));
     }
 }
