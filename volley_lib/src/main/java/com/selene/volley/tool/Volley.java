@@ -16,8 +16,6 @@
 
 package com.selene.volley.tool;
 
-import java.io.File;
-
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
@@ -25,12 +23,15 @@ import android.net.http.AndroidHttpClient;
 import android.os.Build;
 import android.os.Environment;
 
-import com.tony.volleydemo.http.cache.DiskCache;
-import com.tony.volleydemo.http.core.Network;
-import com.tony.volleydemo.http.core.RequestQueue;
-import com.tony.volleydemo.http.stack.HttpClientStack;
-import com.tony.volleydemo.http.stack.HttpStack;
-import com.tony.volleydemo.http.stack.HurlStack;
+import com.selene.volley.cache.DiskCache;
+import com.selene.volley.core.Network;
+import com.selene.volley.core.RequestQueue;
+import com.selene.volley.stack.HttpClientStack;
+import com.selene.volley.stack.HttpStack;
+import com.selene.volley.stack.HurlStack;
+
+import java.io.File;
+
 
 public class Volley {
 

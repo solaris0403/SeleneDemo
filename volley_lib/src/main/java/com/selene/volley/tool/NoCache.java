@@ -16,7 +16,8 @@
 
 package com.selene.volley.tool;
 
-import com.tony.volleydemo.http.cache.Cache;
+
+import com.selene.volley.cache.Cache;
 
 /**
  * A cache that doesn't.

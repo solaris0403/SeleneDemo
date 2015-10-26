@@ -1,27 +1,27 @@
 package com.selene.volley.request;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.RandomAccessFile;
-import java.util.concurrent.TimeUnit;
-import java.util.zip.GZIPInputStream;
+import android.text.TextUtils;
+
+import com.selene.volley.core.DefaultRetryPolicy;
+import com.selene.volley.core.Delivery;
+import com.selene.volley.core.HttpResponseUtils;
+import com.selene.volley.core.NetworkResponse;
+import com.selene.volley.core.Request;
+import com.selene.volley.core.Response;
+import com.selene.volley.core.ServerError;
+import com.selene.volley.core.VolleyError;
+import com.selene.volley.core.VolleyLog;
+import com.selene.volley.tool.HttpHeaderParser;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 
-import android.text.TextUtils;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.RandomAccessFile;
+import java.util.zip.GZIPInputStream;
 
-import com.tony.volleydemo.http.core.DefaultRetryPolicy;
-import com.tony.volleydemo.http.core.Delivery;
-import com.tony.volleydemo.http.core.HttpResponseUtils;
-import com.tony.volleydemo.http.core.NetworkResponse;
-import com.tony.volleydemo.http.core.Request;
-import com.tony.volleydemo.http.core.Response;
-import com.tony.volleydemo.http.core.ServerError;
-import com.tony.volleydemo.http.core.VolleyError;
-import com.tony.volleydemo.http.core.VolleyLog;
-import com.tony.volleydemo.http.tool.HttpHeaderParser;
 
 /**
  * Its purpose is provide a big file download impmenetation, suport continuous transmission

@@ -1,18 +1,19 @@
 package com.selene.volley.core;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.zip.GZIPInputStream;
+import android.text.TextUtils;
+
+import com.selene.volley.tool.ByteArrayPool;
+import com.selene.volley.tool.PoolingByteArrayOutputStream;
 
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.protocol.HTTP;
 
-import android.text.TextUtils;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.zip.GZIPInputStream;
 
-import com.tony.volleydemo.http.tool.ByteArrayPool;
-import com.tony.volleydemo.http.tool.PoolingByteArrayOutputStream;
 
 public class HttpResponseUtils {
 

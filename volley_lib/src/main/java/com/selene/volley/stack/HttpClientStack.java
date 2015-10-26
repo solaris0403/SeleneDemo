@@ -16,12 +16,9 @@
 
 package com.selene.volley.stack;
 
-import java.io.IOException;
-import java.net.URI;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
+import com.selene.volley.core.AuthFailureError;
+import com.selene.volley.core.Request;
+import com.selene.volley.core.Request.Method;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -41,9 +38,13 @@ import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
 import org.apache.http.protocol.HTTP;
 
-import com.tony.volleydemo.http.core.AuthFailureError;
-import com.tony.volleydemo.http.core.Request;
-import com.tony.volleydemo.http.core.Request.Method;
+import java.io.IOException;
+import java.net.URI;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+
 
 /**
  * An HttpStack that performs request over an {@link HttpClient}.

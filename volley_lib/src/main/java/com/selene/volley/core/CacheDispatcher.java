@@ -16,12 +16,13 @@
 
 package com.selene.volley.core;
 
-import java.util.concurrent.BlockingQueue;
-
 import android.os.Process;
 
-import com.tony.volleydemo.http.cache.Cache;
-import com.tony.volleydemo.http.cache.DiskCache;
+import com.selene.volley.cache.Cache;
+import com.selene.volley.cache.DiskCache;
+
+import java.util.concurrent.BlockingQueue;
+
 
 /**
  * Provides a thread for performing cache triage on a queue of requests.

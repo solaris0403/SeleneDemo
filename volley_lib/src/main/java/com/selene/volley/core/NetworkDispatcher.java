@@ -16,16 +16,16 @@
 
 package com.selene.volley.core;
 
-import java.util.concurrent.BlockingQueue;
-
 import android.annotation.TargetApi;
 import android.net.TrafficStats;
 import android.os.Build;
 import android.os.Process;
 import android.os.SystemClock;
 
-import com.tony.volleydemo.http.cache.Cache;
-import com.tony.volleydemo.http.cache.DiskCache;
+import com.selene.volley.cache.Cache;
+
+import java.util.concurrent.BlockingQueue;
+
 
 /**
  * Provides a thread for performing network dispatch from a queue of requests.

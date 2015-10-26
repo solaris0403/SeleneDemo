@@ -16,7 +16,8 @@
 
 package com.selene.volley.tool;
 
-import com.tony.volleydemo.http.core.AuthFailureError;
+
+import com.selene.volley.core.AuthFailureError;
 
 /**
  * An interface for interacting with auth tokens.

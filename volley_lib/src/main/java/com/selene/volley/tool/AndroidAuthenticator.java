@@ -23,7 +23,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.tony.volleydemo.http.core.AuthFailureError;
+import com.selene.volley.core.AuthFailureError;
+
 
 /**
  * An Authenticator that uses {@link AccountManager} to get auth tokens of a

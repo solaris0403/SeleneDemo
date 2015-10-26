@@ -16,15 +16,17 @@
 
 package com.selene.volley.request;
 
+import com.selene.volley.core.Listener;
+import com.selene.volley.core.NetworkResponse;
+import com.selene.volley.core.Request;
+import com.selene.volley.core.Response;
+import com.selene.volley.core.VolleyLog;
+
 import java.io.UnsupportedEncodingException;
 
 import javax.xml.transform.ErrorListener;
 
-import com.tony.volleydemo.http.core.Listener;
-import com.tony.volleydemo.http.core.NetworkResponse;
-import com.tony.volleydemo.http.core.Request;
-import com.tony.volleydemo.http.core.Response;
-import com.tony.volleydemo.http.core.VolleyLog;
+
 
 /**
  * A request for retrieving a T type response body at a given URL that also

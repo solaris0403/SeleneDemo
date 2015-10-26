@@ -16,6 +16,12 @@
 
 package com.selene.volley.core;
 
+import android.os.Handler;
+import android.os.Looper;
+
+import com.selene.volley.cache.Cache;
+import com.selene.volley.cache.DiskCache;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -27,11 +33,6 @@ import java.util.Set;
 import java.util.concurrent.PriorityBlockingQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import android.os.Handler;
-import android.os.Looper;
-
-import com.tony.volleydemo.http.cache.Cache;
-import com.tony.volleydemo.http.cache.DiskCache;
 
 /**
  * A request dispatch queue with a thread pool of dispatchers.

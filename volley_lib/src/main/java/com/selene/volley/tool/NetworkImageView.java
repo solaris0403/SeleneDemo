@@ -21,10 +21,10 @@ import android.util.AttributeSet;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageView;
 
-import com.tony.volleydemo.http.core.VolleyError;
-import com.tony.volleydemo.http.image.ImageLoader;
-import com.tony.volleydemo.http.image.ImageLoader.ImageContainer;
-import com.tony.volleydemo.http.image.ImageLoader.ImageListener;
+import com.selene.volley.core.VolleyError;
+import com.selene.volley.image.ImageLoader;
+import com.selene.volley.image.ImageLoader.ImageContainer;
+import com.selene.volley.image.ImageLoader.ImageListener;
 
 /**
  * Handles fetching an image from a URL as well as the life-cycle of the
@@ -179,7 +179,7 @@ public class NetworkImageView extends ImageView {
 				}
 			}
 
-			@Override
+			@Overridea
 			public void onSuccess(final ImageContainer response, boolean isImmediate) {
 				// If this was an immediate response that was delivered inside
 				// of a layout

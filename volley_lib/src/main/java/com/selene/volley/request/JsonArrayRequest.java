@@ -16,16 +16,18 @@
 
 package com.selene.volley.request;
 
-import java.io.UnsupportedEncodingException;
+import com.selene.volley.core.Listener;
+import com.selene.volley.core.NetworkResponse;
+import com.selene.volley.core.ParseError;
+import com.selene.volley.core.Response;
+import com.selene.volley.tool.HttpHeaderParser;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import com.tony.volleydemo.http.core.Listener;
-import com.tony.volleydemo.http.core.NetworkResponse;
-import com.tony.volleydemo.http.core.ParseError;
-import com.tony.volleydemo.http.core.Response;
-import com.tony.volleydemo.http.tool.HttpHeaderParser;
+import java.io.UnsupportedEncodingException;
+
+
 
 /**
  * A request for retrieving a {@link JSONArray} response body at a given URL.

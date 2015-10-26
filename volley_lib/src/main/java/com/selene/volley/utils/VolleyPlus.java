@@ -3,13 +3,14 @@ package com.selene.volley.utils;
 import android.content.Context;
 import android.widget.ImageView;
 
-import com.tony.volleydemo.http.cache.BitmapImageCache;
-import com.tony.volleydemo.http.core.Request;
-import com.tony.volleydemo.http.core.RequestQueue;
-import com.tony.volleydemo.http.image.ImageLoader;
-import com.tony.volleydemo.http.image.SelfImageLoader;
-import com.tony.volleydemo.http.request.ImageRequest;
-import com.tony.volleydemo.http.tool.Volley;
+import com.selene.volley.cache.BitmapImageCache;
+import com.selene.volley.core.Request;
+import com.selene.volley.core.RequestQueue;
+import com.selene.volley.image.ImageLoader;
+import com.selene.volley.image.SelfImageLoader;
+import com.selene.volley.request.ImageRequest;
+import com.selene.volley.tool.Volley;
+
 
 /**
  * @author Tony E-mail:solaris0403@gmail.com

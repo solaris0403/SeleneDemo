@@ -1,13 +1,14 @@
 package com.selene.volley.tool;
 
-import java.util.LinkedList;
-
 import android.os.Looper;
 
-import com.tony.volleydemo.http.core.Listener;
-import com.tony.volleydemo.http.core.RequestQueue;
-import com.tony.volleydemo.http.core.VolleyError;
-import com.tony.volleydemo.http.request.FileDownloadRequest;
+import com.selene.volley.core.Listener;
+import com.selene.volley.core.RequestQueue;
+import com.selene.volley.core.VolleyError;
+import com.selene.volley.request.FileDownloadRequest;
+
+import java.util.LinkedList;
+
 
 /**
  * This class provided continuous transmission on the breakpoint download task management utilities.

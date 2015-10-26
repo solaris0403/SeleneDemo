@@ -18,7 +18,8 @@ package com.selene.volley.cache;
 
 import android.graphics.Bitmap;
 
-import com.tony.volleydemo.http.image.ImageLoader;
+import com.selene.volley.image.ImageLoader;
+
 
 public class BitmapImageCache extends LruCache<String, Bitmap> implements ImageLoader.ImageCache {
 	public static int getDefaultLruCacheSize() {
