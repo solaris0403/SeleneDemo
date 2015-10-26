@@ -3,7 +3,7 @@ package com.tony.selene.common.trinea.android.common.util;
 import android.content.Context;
 import android.os.Build;
 import android.os.PowerManager;
-import com.tony.selene.common.android.log.Log;
+import com.tony.selene.common.trinea.android.common.log.Log;
 
 /**
  * <!-- 亮屏 -->

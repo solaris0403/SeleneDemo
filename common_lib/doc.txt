@@ -1,3 +1,9 @@
+common 通用工具类
+volley 网络请求
+       注解IOC
+       数据库
+
+
 utils->
         ArrayUtils                  ok
         CollectionUtils             ok
@@ -24,7 +30,6 @@ utils->
         WakeLock                    ok              亮屏
         FlashLight                  ok
         ClassUtil                   ok              类信息
-
         AlarmUtil                   ok              闹钟服务
         AndroidUtil                 ok              手机信息 & MAC地址 & 开机时间
         BitmapUtil                  ok              对位图的操作 转Byte 缩略 质量 大小位置
@@ -49,7 +54,7 @@ utils->
         VibrateUtil                 ok              震动服务
 app->
         AppUtils                    ok              获取App信息+调用系统分享
-
+        SilentInstaller             ok              静默安装
         PackageUtils                ok              应用的安装卸载
 database->
         AssetDatabaseOpenHelper     ok
@@ -57,11 +62,19 @@ io->
         FileUtils                   ok              file
         IOUtils                     ok              关闭流
         ByteUtil                    ok              字节转换
+
+        Charsets                    ok              字符转码
+        FilenameUtils               no              General filename and filepath manipulation utilities.
+        FileUtil                    no              General file manipulation utilities.
+        IOUtil                      no              General IO stream manipulation utilities.
+        StringCodingUtils           no              getBytes
+        ByteArrayOutputStream       no
+        ClosedInputStream           no
+        StringBuilderWriter         no
 http->
         HttpUtils                   ok              简单的http请求
 math->
         Averager                    ok              算数平均数
-
         NumberUtil                  ok
 receiver->                                          接收器
         PhoneReceiver               ok
@@ -70,3 +83,19 @@ receiver->                                          接收器
         TimeREceiver                ok
 data->
         cipher                      ok              加密解密自定义算法
+AsyncExecutor->
+        AsyncExecutor               ok              异步执行
+security->
+        Base64                      ok
+assist->
+        KeyguardLock                ok              键盘锁
+        Network                     ok              网络
+        TimeAverager                ok              时间计数器（秒表功能）
+        TimeCounter                 ok              时间计数器（计算持续事件）
+        LogReader                   no              日志打印（有待加强）
+        NotificationService         no              通知
+log->
+        Log                         no              有待组合加强
+view->
+        TipsView                    no              未测试过
+

@@ -3,7 +3,7 @@ package com.tony.selene.common.trinea.android.common.util;
 import android.content.Context;
 import android.telephony.TelephonyManager;
 
-import com.tony.selene.common.android.log.Log;
+import com.tony.selene.common.trinea.android.common.log.Log;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;

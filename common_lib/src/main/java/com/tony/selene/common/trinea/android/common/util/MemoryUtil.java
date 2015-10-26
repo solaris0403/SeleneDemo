@@ -6,7 +6,7 @@ import android.content.Context;
 import android.os.Build;
 import android.text.format.Formatter;
 
-import com.tony.selene.common.android.log.Log;
+import com.tony.selene.common.trinea.android.common.log.Log;
 
 /**
  * Get memory info.

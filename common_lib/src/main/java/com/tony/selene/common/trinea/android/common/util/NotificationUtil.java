@@ -12,7 +12,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 
-import com.tony.selene.common.android.log.Log;
+import com.tony.selene.common.trinea.android.common.log.Log;
 
 import java.util.ArrayList;
 
